@@ -1,0 +1,36 @@
+{
+  "description": "Launch/show Terminal if it is not in foreground",
+  "manipulators": [
+    {
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "^com\\.apple\\.Terminal$"
+          ],
+          "type": "frontmost_application_unless"
+        }
+      ],
+      "from": {
+        "key_code": "spacebar",
+        "modifiers": {
+          "mandatory": [
+            "control"
+          ]
+        }
+      },
+      "to": [
+        {
+          "software_function": {
+            "open_application": {
+              "file_path": "/System/Applications/Utilities/Terminal.app"
+            }
+          }
+        },
+        {
+          "shell_command": "/usr/bin/osascript -e 'tell application \"Terminal\"' -e \"activate\" -e 'tell application \"System Events\"' -e 'keystroke \"f\" using {control down, command down}' -e \"end tell\" -e \"end tell\""
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}

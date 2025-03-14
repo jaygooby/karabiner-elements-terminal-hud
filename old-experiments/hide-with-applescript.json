@@ -1,0 +1,21 @@
+{
+  "description": "Minimize Terminal if it is in foreground",
+  "manipulators": [
+      {
+          "conditions": [
+              {
+                  "bundle_identifiers": [
+                      "^com\\.apple\\.Terminal$"
+                  ],
+                  "type": "frontmost_application_if"
+              }
+          ],
+          "from": {
+              "key_code": "spacebar",
+              "modifiers": { "mandatory": ["control"] }
+          },
+          "to": [{ "shell_command": "/usr/bin/osascript -e 'tell application \"Terminal\"' -e \"activate\" -e 'tell application \"System Events\"' -e 'keystroke \"f\" using {control down, command down}' -e \"end tell\" -e \"end tell\"; sleep 1; /usr/bin/osascript -e 'tell application \"Terminal\"' -e \"activate\" -e 'tell application \"System Events\"' -e 'keystroke \"h\" using {command down}' -e \"end tell\" -e \"end tell\"" }],
+          "type": "basic"
+      }
+  ]
+}

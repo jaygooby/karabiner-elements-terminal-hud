@@ -1,0 +1,46 @@
+{
+  "description": "Minimize Terminal if it is in foreground",
+  "manipulators": [
+    {
+      "type": "basic",
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "^com\\.apple\\.Terminal$"
+          ],
+          "type": "frontmost_application_if"
+        }
+      ],
+      "from": {
+        "key_code": "spacebar",
+        "modifiers": {
+          "mandatory": [
+            "control"
+          ]
+        }
+      },
+      "to": [
+        {
+          "key_code": "f",
+          "modifiers": [
+            "command",
+            "control"
+          ]
+        }
+      ],
+      "to_delayed_action": {
+        "to_if_invoked": [
+          {
+            "key_code": "h",
+            "modifiers": [
+              "command"
+            ]
+          }
+        ]
+      },
+      "parameters": {
+        "basic.to_delayed_action_delay_milliseconds": 600
+      }
+    }
+  ]
+}

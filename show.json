@@ -1,0 +1,53 @@
+{
+  "description": "Launch/show Terminal",
+  "manipulators": [
+    {
+      "type": "basic",
+      "conditions": [
+        {
+          "bundle_identifiers": [
+            "^com\\.apple\\.Terminal$"
+          ],
+          "type": "frontmost_application_unless"
+        }
+      ],
+      "from": {
+        "key_code": "spacebar",
+        "modifiers": {
+          "mandatory": [
+            "control"
+          ]
+        }
+      },
+      "to": [
+        {
+          "software_function": {
+            "open_application": {
+              "file_path": "/System/Applications/Utilities/Terminal.app"
+            }
+          }
+        }
+      ],
+      "to_delayed_action": {
+        "to_if_canceled": [
+          {
+            "key_code": "f",
+            "modifiers": [
+              "command",
+              "control"
+            ]
+          }
+        ],
+        "to_if_invoked": [
+          {
+            "key_code": "f",
+            "modifiers": [
+              "command",
+              "control"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
