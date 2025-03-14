@@ -8,7 +8,7 @@ Uses [Karabiner-Elements](https://github.com/pqrs-org/Karabiner-Elements) becaus
 
 Choose [`Complex Modifications` in Karabiner Elements, then click the `Add your own rule` button](https://karabiner-elements.pqrs.org/docs/manual/configuration/add-your-own-complex-modifications/). Copy and paste this repo's [`show.json`](./show.json) then do it again for [`hide.json`](./hide.json).
 
-Now when you press `Command`+`Space` on your keyboard, the terminal should toggle.
+Now when you press `Control`+`Space` on your keyboard, the terminal should toggle.
 
 # Why
 I got fed up with iTerm2 eating energy and don't use any of its advanced features other than the fullscreen toggle, so I thought I'd try it with the macOS native Terminal.app.
